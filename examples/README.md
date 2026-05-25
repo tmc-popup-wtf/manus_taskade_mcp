@@ -2,6 +2,10 @@
 
 Ready-to-use templates for connecting Taskade MCP Server to popular AI and automation platforms.
 
+## PopUpEmpire.wtf Foundation
+
+Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) to set up the four core verticals (Shop_wtf, Blog_wtf, Hack_wtf, Club_wtf) with Manus as the execution workhorse and Claude as planning/review support.
+
 ## n8n
 
 Import [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) into n8n to create an AI agent with access to all 62+ Taskade tools.
