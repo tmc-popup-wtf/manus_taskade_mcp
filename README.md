@@ -2,18 +2,37 @@
 
 # Taskade MCP Server
 
-**Connect [Taskade](https://www.taskade.com) to any AI assistant — Claude, Cursor, Windsurf, n8n, and more — via the [Model Context Protocol](https://modelcontextprotocol.io/).**
+**Connect [Taskade](https://www.taskade.com) to any AI assistant — Claude, Cursor, Windsurf, VS Code, and more — via the [Model Context Protocol](https://modelcontextprotocol.io/).**
 
 [![npm](https://img.shields.io/npm/v/@taskade/mcp-server?style=flat-square&color=FF2D60)](https://www.npmjs.com/package/@taskade/mcp-server)
 [![GitHub stars](https://img.shields.io/github/stars/taskade/mcp?style=flat-square)](https://github.com/taskade/mcp)
 [![License](https://img.shields.io/github/license/taskade/mcp?style=flat-square)](https://github.com/taskade/mcp/blob/main/LICENSE)
 
-**50+ tools** for workspaces, projects, tasks, AI agents, knowledge bases, templates, automations, media, and sharing — all from your AI client.
+[![Add to Cursor](https://img.shields.io/badge/Add_to-Cursor-0098FF?style=flat-square)](cursor://anysphere.cursor-deeplink/mcp/install?name=taskade&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIkB0YXNrYWRlL21jcC1zZXJ2ZXIiXSwiZW52Ijp7IlRBU0tBREVfQVBJX0tFWSI6InlvdXItYXBpLWtleS1oZXJlIn19)
+[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white)](vscode:mcp/install?%7B%22name%22%3A%22taskade%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40taskade%2Fmcp-server%22%5D%2C%22env%22%3A%7B%22TASKADE_API_KEY%22%3A%22%24%7Binput%3Ataskade_api_key%7D%22%7D%7D)
+
+**57 tools** for workspaces, projects, tasks, AI agents, knowledge bases, templates, automations, media, and sharing — all from your AI client.
 
 </div>
 
 - [MCP Server](https://github.com/taskade/mcp/tree/main/packages/server) — Connect Taskade to Claude Desktop, Cursor, Windsurf, or any MCP client.
 - [OpenAPI Codegen](https://github.com/taskade/mcp/tree/main/packages/openapi-codegen) — Generate MCP tools from any OpenAPI spec — not just Taskade.
+
+---
+
+## Contents
+
+- [Demo](#demo)
+- [Quick Start](#quick-start)
+- [Tools (57)](#tools-57)
+- [Why Taskade MCP?](#why-taskade-mcp)
+- [Agent Recipes](#agent-recipes)
+- [Use Cases](#use-cases)
+- [OpenAPI Codegen](#openapi-codegen)
+- [What is Taskade?](#what-is-taskade)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -72,7 +91,61 @@ Add to your Cursor MCP settings:
 }
 ```
 
-### 4. HTTP / SSE Mode (for n8n, custom clients)
+### 4. Windsurf
+
+Add to `~/.codeium/windsurf/mcp_config.json` (or **Settings → Cascade → MCP → Add Server**):
+
+```json
+{
+  "mcpServers": {
+    "taskade": {
+      "command": "npx",
+      "args": ["-y", "@taskade/mcp-server"],
+      "env": {
+        "TASKADE_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### 5. Cline
+
+In VS Code, open the Cline **MCP Servers** panel → **Configure MCP Servers** and add:
+
+```json
+{
+  "mcpServers": {
+    "taskade": {
+      "command": "npx",
+      "args": ["-y", "@taskade/mcp-server"],
+      "env": {
+        "TASKADE_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### 6. VS Code
+
+Add a `.vscode/mcp.json` to your workspace (VS Code uses the `servers` key; `${input:…}` prompts for your key on first run):
+
+```json
+{
+  "servers": {
+    "taskade": {
+      "command": "npx",
+      "args": ["-y", "@taskade/mcp-server"],
+      "env": {
+        "TASKADE_API_KEY": "${input:taskade_api_key}"
+      }
+    }
+  }
+}
+```
+
+### 7. HTTP / SSE Mode (remote & custom clients)
 
 ```bash
 TASKADE_API_KEY=your-api-key npx @taskade/mcp-server --http
@@ -82,7 +155,7 @@ The server starts at `http://localhost:3000` (configure with `PORT` env var). Co
 
 ---
 
-## Tools (50+)
+## Tools (57)
 
 ### Workspaces
 
@@ -101,13 +174,13 @@ The server starts at `http://localhost:3000` (configure with `PORT` env var). Co
 | `projectCopy` | Copy a project to a folder |
 | `projectComplete` | Mark project as completed |
 | `projectRestore` | Restore a completed project |
-| `projectFromTemplate` | Create project from a template |
 | `projectMembersGet` | List project members |
 | `projectFieldsGet` | Get custom fields for a project |
 | `projectShareLinkGet` | Get the share link |
 | `projectShareLinkEnable` | Enable the share link |
 | `projectBlocksGet` | Get all blocks in a project |
 | `projectTasksGet` | Get all tasks in a project |
+| `folderProjectsGet` | List projects in a folder |
 
 ### Tasks
 
@@ -194,7 +267,7 @@ Taskade MCP gives your AI assistant **full access to your workspace** — projec
                          ↓
   ┌──────────────────────────────────┐
   │     Taskade MCP Server           │
-  │     (50+ tools, 7 categories)    │
+  │     (57 tools, 7 categories)     │
   └──────────────────────────────────┘
        ↓              ↓            ↓
   folderCreateAgent  agentKnowledge  agentPublicAccess
@@ -221,7 +294,7 @@ Taskade MCP gives your AI assistant **full access to your workspace** — projec
 
 ### Why Taskade MCP Over Other MCP Servers?
 
-Taskade is the only MCP server that includes **AI agent management** (create, train, deploy agents), **knowledge base training** (attach docs, projects, media), and **OpenAPI codegen** (generate MCP tools from any API spec). 50+ tools across 7 categories.
+Taskade is the only MCP server that includes **AI agent management** (create, train, deploy agents), **knowledge base training** (attach docs, projects, media), and **OpenAPI codegen** (generate MCP tools from any API spec). 57 tools across 7 categories.
 
 ---
 
@@ -362,10 +435,6 @@ Automate project creation from templates:
 - "Create 5 new client onboarding projects from the Client Template"
 - "Copy the Sprint Retrospective project for this week"
 
-### n8n Automation Integration
-
-Connect Taskade to 400+ apps via n8n workflows. See the [n8n Integration Guide](./N8N_WORKFLOW_GUIDE.md) for setup instructions.
-
 ---
 
 ## OpenAPI Codegen
@@ -424,6 +493,16 @@ See [open issues](https://github.com/taskade/mcp/issues) for planned features an
 - **Webhook Triggers** — Receive real-time notifications from Taskade events
 - **`agent.js`** — Open-source autonomous agent toolkit (coming soon)
 - **TaskOS** — Agent platform at [developers.taskade.com](https://developers.taskade.com)
+
+---
+
+## Privacy & Security
+
+Your Taskade API token authorizes the MCP server to call the Taskade public API on your behalf. The server talks **only** to `https://www.taskade.com/api/v1` and does not send your data to other third-party services.
+
+- **Privacy** — see the [Taskade Privacy Policy](https://www.taskade.com/privacy).
+- **Security & vulnerability reporting** — see [SECURITY.md](./SECURITY.md).
+- Store your token in an environment variable; never commit it.
 
 ---
 
