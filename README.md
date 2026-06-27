@@ -24,6 +24,7 @@
 
 - [Demo](#demo)
 - [Quick Start](#quick-start)
+- [Actionable Setup Plan](#actionable-setup-plan)
 - [Tools (57)](#tools-57)
 - [Why Taskade MCP?](#why-taskade-mcp)
 - [Agent Recipes](#agent-recipes)
@@ -152,6 +153,33 @@ TASKADE_API_KEY=your-api-key npx @taskade/mcp-server --http
 ```
 
 The server starts at `http://localhost:3000` (configure with `PORT` env var). Connect via SSE at `http://localhost:3000/sse?access_token=your-api-key`.
+
+---
+
+## Actionable Setup Plan
+
+Use this sequence if you want to go from zero to a usable Taskade MCP workflow quickly:
+
+1. **Pick one client first** — Claude Desktop, Cursor, Windsurf, Cline, VS Code, or a custom SSE client.
+2. **Generate one Taskade API key** from [Taskade Settings > API](https://www.taskade.com/settings/api).
+3. **Copy the matching config block** from the Quick Start section into your client settings.
+4. **Start with a single verification prompt** like “Show me all my Taskade projects” to confirm the MCP connection works.
+5. **Create a small working area in Taskade** with one folder, one project, and a few tasks before scaling the setup.
+6. **Add your operating workflow** by pairing `@claude` for planning/orchestration with `@copilot` for implementation-heavy work.
+7. **Attach reusable Openclaw skills** to the workflows you repeat most often so setup effort turns into reusable execution.
+8. **Use the PopUpEmpire example blueprint** in [`/examples/popupempire-taskade-foundation.md`](./examples/popupempire-taskade-foundation.md) if you want a concrete starting structure.
+
+### Keep Real User Limitations in Mind
+
+When setting up Taskade MCP for actual users, optimize for human constraints, not just tool coverage:
+
+- **Low time and energy:** keep the first workflow small enough to complete in one sitting.
+- **Context switching fatigue:** organize work into clear folders, current sprint views, and named repeatable skills.
+- **Implementation bottlenecks:** make `@copilot` handoffs explicit for repo, code, and validation work.
+- **Decision overload:** use pre-named templates, checklists, and Openclaw skills instead of asking users to invent a process every time.
+- **Need for review and safety:** add review checkpoints before publish/share/automation actions that affect external users or live systems.
+
+This keeps the system practical for constrained operators while still benefiting from the full MCP toolset.
 
 ---
 

@@ -96,6 +96,19 @@ Attach your Openclaw skills to the operating model so each vertical can reuse th
 
 Use each skill as a named repeatable workflow in Taskade so Claude can route work consistently and Copilot can pick up the implementation steps when needed.
 
+## Operator Limitations to Design Around
+
+Set the system up assuming the operator may have limited time, energy, focus, and executive bandwidth:
+
+- Keep active work-in-progress intentionally small.
+- Prefer short checklists over large ambiguous projects.
+- Reduce tool switching by routing planning to `@claude` and implementation to `@copilot`.
+- Use Openclaw skills to externalize memory so repeatable work does not depend on recall.
+- Add recovery-friendly views such as `Backlog`, `Current Sprint`, and `Metrics and Learnings` so re-entry is easy after interruptions.
+- Require clear “next action” wording on tasks so momentum is preserved even on low-capacity days.
+
+This makes the workspace more forgiving, more repeatable, and easier to maintain over time.
+
 ## Weekly Execution Cadence
 
 - **Monday (`@claude`-led planning):** prioritize goals, choose the relevant Openclaw skills, and define sprint outcomes.
