@@ -18,6 +18,8 @@ Build a cool digital clubhouse for misunderstood adults navigating neurotypical 
 
 ## AI Operating Model
 
+In this blueprint, `@claude` and `@copilot` mean explicit handoff labels you place in Taskade tasks, notes, or workflow steps so the next action owner is always clear.
+
 - **Claude = primary operator**
   - Runs planning, task execution, checklist completion, follow-through, and daily operations inside Taskade.
 - **Copilot = implementation + shipping partner**

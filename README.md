@@ -160,7 +160,7 @@ The server starts at `http://localhost:3000` (configure with `PORT` env var). Co
 
 Use this sequence if you want to go from zero to a usable Taskade MCP workflow quickly:
 
-1. **Pick one client first** — Claude Desktop, Cursor, Windsurf, Cline, VS Code, or a custom SSE client.
+1. **Pick one client first** — use one of the Quick Start targets below: Claude Desktop, Cursor, Windsurf, Cline, VS Code, or the HTTP/SSE option for a custom client.
 2. **Generate one Taskade API key** from [Taskade Settings > API](https://www.taskade.com/settings/api).
 3. **Copy the matching config block** from the Quick Start section into your client settings.
 4. **Start with a single verification prompt** like “Show me all my Taskade projects” to confirm the MCP connection works.
