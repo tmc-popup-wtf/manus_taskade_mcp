@@ -4,7 +4,7 @@ Ready-to-use templates for connecting Taskade MCP Server to popular AI and autom
 
 ## PopUpEmpire.wtf Foundation
 
-Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) to set up the four core verticals (Shop_wtf, Blog_wtf, Hack_wtf, Club_wtf) with Manus as the execution workhorse and Claude as planning/review support.
+Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) to set up the four core verticals (Shop_wtf, Blog_wtf, Hack_wtf, Club_wtf) with Claude as the primary operator, Copilot as implementation support, and Openclaw skills integrated into recurring workflows.
 
 ## n8n
 
