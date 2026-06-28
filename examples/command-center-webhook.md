@@ -29,7 +29,7 @@ If you are testing in n8n first, use the temporary test URL that n8n generates i
 
 ```json
 {
-  "command": "Update our support and market-intel agents for the current sprint",
+  "command": "Update our support and market-intelligence agents for the current sprint",
   "workspace": "PopUpEmpire.wtf HQ",
   "folder": "04-Hack_wtf",
   "sendTo": "Manus",
@@ -60,7 +60,7 @@ Suggested relay body:
 ```json
 {
   "sendTo": "Manus",
-  "command": "Update our support and market-intel agents for the current sprint",
+  "command": "Update our support and market-intelligence agents for the current sprint",
   "taskadeSummary": "Agent configs updated, knowledge attached, and publication status reviewed.",
   "nextAction": "Execute the implementation checklist and report completion."
 }

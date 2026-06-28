@@ -90,7 +90,7 @@ In each vertical folder, start with:
 
 Attach your Openclaw skills to the operating model so each vertical can reuse the same execution patterns:
 
-- **Planning skills:** weekly sprint shaping, prioritization, and decision framing for `01-Strategy-and-Vision`.
+- **Planning skills:** weekly sprint shaping, prioritization, and decision framing for `01-Strategy-and-Vision_wtf`.
 - **Content skills:** outlines, drafts, repurposing, and editorial QA for `03-Blog_wtf`.
 - **Product skills:** offer design, launch checklists, and merchandising workflows for `02-Shop_wtf`.
 - **Build skills:** experiments, automations, prototyping, and shipping loops for `04-Hack_wtf`.
