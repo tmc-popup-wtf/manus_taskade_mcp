@@ -1,5 +1,5 @@
 {
-  "name": "Taskade MCP — AI Agent with Project Management Tools",
+  "name": "Taskade MCP — Command Center Agent",
   "nodes": [
     {
       "parameters": {
@@ -14,7 +14,7 @@
     {
       "parameters": {
         "options": {
-          "systemMessage": "You are a helpful project management assistant. You have access to Taskade tools via MCP to manage projects, tasks, and AI agents. Use these tools to help users organize their work."
+          "systemMessage": "You are a command-center project management assistant. You have access to Taskade tools via MCP to manage projects, tasks, and AI agents. Use these tools to update agents, organize work, and prepare clean handoff summaries when the request says to send the result to Manus."
         }
       },
       "id": "ai-agent",

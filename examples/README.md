@@ -10,6 +10,10 @@ Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) t
 
 Import [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) into n8n to create an AI agent with access to all 57 Taskade tools.
 
+## Command Center Webhook
+
+Use [`command-center-webhook.md`](./command-center-webhook.md) for a ready-to-adapt webhook pattern that sends command-center requests into your Taskade workflow and forwards the final handoff to Manus.
+
 ### Prerequisites
 
 1. Install the [n8n MCP Client](https://www.npmjs.com/package/n8n-nodes-mcp) community node
