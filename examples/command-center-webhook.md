@@ -23,7 +23,7 @@ If you are testing in n8n first, use the temporary test URL that n8n generates i
 1. Receive a command-center payload.
 2. Pass the request to your Taskade MCP-enabled agent.
 3. Let the agent update Taskade agents, tasks, projects, or knowledge as needed.
-4. Relay the resulting summary and action payload to **Claude**.
+4. Relay the resulting summary and action payload to your **Claude** handoff endpoint.
 
 ## Suggested Payload
 
@@ -45,11 +45,11 @@ If you are testing in n8n first, use the temporary test URL that n8n generates i
 
 Use an agent prompt like this in your n8n AI Agent node:
 
-> You are the command-center operator for Taskade. Interpret incoming requests, use Taskade MCP tools to update or create agents when needed, summarize what changed, and prepare a clean downstream handoff whenever `sendTo` is set to `Claude`.
+> You are the command-center operator for Taskade. Interpret incoming requests, use Taskade MCP tools to update or create agents when needed, summarize what changed, and prepare a clean downstream handoff to the configured Claude endpoint whenever `sendTo` is set to `Claude`.
 
 ## Claude Handoff
 
-If Claude has its own webhook receiver, forward the post-agent payload to a second endpoint such as:
+If you run Claude through your own proxy, automation layer, or webhook receiver, forward the post-agent payload to that downstream endpoint, for example:
 
 ```text
 https://YOUR_CLAUDE_HOST/webhook/taskade-command-center
@@ -68,7 +68,7 @@ Suggested relay body:
 
 ## Important Limitation
 
-This repository does **not** provision a live public webhook URL for you. The webhook URL is created by your automation host (for example, n8n), and the Claude destination URL must be one you control.
+This repository does **not** provision a live public webhook URL for you. The webhook URL is created by your automation host (for example, n8n), and the Claude destination URL should be a proxy or integration endpoint that you control.
 
 ## Best Fit in This Repo
 
