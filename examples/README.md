@@ -12,7 +12,7 @@ Import [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) into n
 
 ## Command Center Webhook
 
-Use [`command-center-webhook.md`](./command-center-webhook.md) for a ready-to-adapt webhook pattern that sends command-center requests into your Taskade workflow and forwards the final handoff to Manus.
+Use [`command-center-webhook.md`](./command-center-webhook.md) for a ready-to-adapt webhook pattern that sends command-center requests into your Taskade workflow and forwards the final handoff to Claude.
 
 ### Prerequisites
 
