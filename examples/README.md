@@ -4,11 +4,15 @@ Ready-to-use templates for connecting Taskade MCP Server to popular AI and autom
 
 ## PopUpEmpire.wtf Foundation
 
-Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) to set up the four core verticals (Shop_wtf, Blog_wtf, Hack_wtf, Club_wtf) with Manus as the execution workhorse and Claude as planning/review support.
+Use [`popupempire-taskade-foundation.md`](./popupempire-taskade-foundation.md) to set up the four core verticals (Shop_wtf, Blog_wtf, Hack_wtf, Club_wtf) with Claude as the primary operator, Copilot as implementation support, and Openclaw skills integrated into recurring workflows.
 
 ## n8n
 
 Import [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) into n8n to create an AI agent with access to all 57 Taskade tools.
+
+## Command Center Webhook
+
+Use [`command-center-webhook.md`](./command-center-webhook.md) for a ready-to-adapt webhook pattern that sends command-center requests into your Taskade workflow and forwards the final handoff to your Claude integration endpoint.
 
 ### Prerequisites
 
@@ -21,7 +25,7 @@ Import [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) into n
 1. In n8n, go to **Settings > Community Nodes > Install** and add `n8n-nodes-mcp`
 2. Import the workflow JSON via **Workflow > Import from File**
 3. Replace `YOUR_TASKADE_API_KEY` in the Taskade MCP node with your actual API key
-4. Configure your OpenAI (or other LLM) credentials
+4. Configure your OpenAI credentials, or swap the sample chat-model node for Anthropic/another supported n8n LLM node and then configure those credentials
 5. Activate the workflow
 
 ### What you can do

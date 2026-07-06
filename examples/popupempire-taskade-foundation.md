@@ -18,14 +18,19 @@ Build a cool digital clubhouse for misunderstood adults navigating neurotypical 
 
 ## AI Operating Model
 
-- **Manus = workhorse executor**
-  - Runs task execution, checklist completion, follow-through, and daily operations.
-- **Claude = strategy + reflection partner**
-  - Handles planning quality, narrative clarity, idea shaping, and review feedback.
+In this blueprint, `@claude` and `@copilot` mean explicit handoff labels you place in Taskade tasks, notes, or workflow steps so the next action owner is always clear.
+
+- **Claude = primary operator**
+  - Runs planning, task execution, checklist completion, follow-through, and daily operations inside Taskade.
+- **Copilot = implementation + shipping partner**
+  - Handles code-heavy execution, technical reviews, validation, and repo-facing delivery work.
+- **Openclaw skills = reusable operating system**
+  - Package your repeatable playbooks as skill modules that Claude can invoke for planning, content, automation, launches, and follow-up.
 - **Loop**
-  1. Claude proposes/refines plan.
-  2. Manus executes tasks in Taskade.
-  3. Claude reviews outcomes and adjusts direction.
+  1. `@claude` proposes or refines the plan in Taskade.
+  2. Claude applies the relevant Openclaw skill for the current workflow.
+  3. `@copilot` handles implementation-heavy or repo-facing tasks.
+  4. Claude reviews outcomes and adjusts direction.
 
 ## Vertical-by-Vertical Foundation
 
@@ -81,15 +86,41 @@ In each vertical folder, start with:
 5. **Creative Nostalgia**  
    Arts, crafts, playful quests, and restorative fun.
 
+## Openclaw Skill Integration
+
+Attach your Openclaw skills to the operating model so each vertical can reuse the same execution patterns:
+
+- **Planning skills:** weekly sprint shaping, prioritization, and decision framing for `01-Strategy-and-Vision_wtf`.
+- **Content skills:** outlines, drafts, repurposing, and editorial QA for `03-Blog_wtf`.
+- **Product skills:** offer design, launch checklists, and merchandising workflows for `02-Shop_wtf`.
+- **Build skills:** experiments, automations, prototyping, and shipping loops for `04-Hack_wtf`.
+- **Community skills:** onboarding quests, accountability prompts, and retention rituals for `05-Club_wtf`.
+
+Use each skill as a named repeatable workflow in Taskade so Claude can route work consistently and Copilot can pick up the implementation steps when needed.
+
+## Operator Limitations to Design Around
+
+Set the system up assuming the operator may have limited time, energy, focus, and executive bandwidth:
+
+- Keep active work-in-progress intentionally small.
+- Prefer short checklists over large ambiguous projects.
+- Reduce tool switching by routing planning to `@claude` and implementation to `@copilot`.
+- Use Openclaw skills to externalize memory so repeatable work does not depend on recall.
+- Add recovery-friendly views such as `Backlog`, `Current Sprint`, and `Metrics and Learnings` so re-entry is easy after interruptions.
+- Require clear “next action” wording on tasks so momentum is preserved even on low-capacity days.
+
+This makes the workspace more forgiving, more repeatable, and easier to maintain over time.
+
 ## Weekly Execution Cadence
 
-- **Monday (Claude-led planning):** prioritize goals and define sprint outcomes.
-- **Daily (Manus-led execution):** complete top 3 tasks, update blockers, ship one artifact.
-- **Friday (Claude + Manus review):** summarize wins, lessons, and next experiments.
+- **Monday (`@claude`-led planning):** prioritize goals, choose the relevant Openclaw skills, and define sprint outcomes.
+- **Daily (Claude-led execution):** complete top 3 tasks, update blockers, ship one artifact, and hand repo work to `@copilot` when needed.
+- **Friday (`@claude` + `@copilot` review):** summarize wins, lessons, implementation gaps, and next experiments.
 
 ## Definition of Done (Foundation Phase)
 
 - All four vertical folders exist with baseline projects.
-- Manus task queue is active for each vertical.
-- Claude review checkpoint is attached to each weekly sprint.
+- Claude task queue is active for each vertical.
+- Openclaw skills are mapped to each vertical’s recurring workflows.
+- Claude review checkpoint and Copilot implementation handoff are attached to each weekly sprint.
 - First publishable asset exists in each vertical.
