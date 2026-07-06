@@ -18,6 +18,8 @@ https://YOUR_N8N_HOST/webhook/taskade-command-center
 
 If you are testing in n8n first, use the temporary test URL that n8n generates in the editor.
 
+This `taskade-command-center` webhook is the inbound entry point for your Taskade-driven workflow.
+
 ## What the Webhook Should Do
 
 1. Receive a command-center payload.
@@ -47,15 +49,17 @@ Use an agent prompt like this in your n8n AI Agent node:
 
 > You are the command-center operator for Taskade. Interpret incoming requests, use Taskade MCP tools to update or create agents when needed, summarize what changed, and prepare a clean downstream handoff to the configured Claude endpoint whenever `sendTo` is set to `Claude`.
 
-The bundled [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) uses an OpenAI chat-model node as a sample. Swap that node for an Anthropic/Claude-compatible chat-model node in n8n if you want Claude to run the orchestration step too.
+The bundled [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) uses an OpenAI chat-model node as a sample. Swap that node for an Anthropic/Claude-compatible chat-model node in n8n if you want Claude to run the orchestration step too. To actually deliver the handoff payload to Claude, add your own downstream HTTP Request node or external proxy step after the Taskade agent completes.
 
 ## Claude Handoff
 
 If you run Claude through your own proxy, automation layer, or webhook receiver, forward the post-agent payload to that downstream endpoint, for example:
 
 ```text
-https://YOUR_CLAUDE_HOST/webhook/claude-receiver
+https://your-claude-proxy.example.com/webhook/claude-receiver
 ```
+
+This `claude-receiver` URL is a separate downstream target from the inbound `taskade-command-center` webhook above.
 
 Suggested relay body:
 
