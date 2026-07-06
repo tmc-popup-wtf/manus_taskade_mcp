@@ -47,6 +47,8 @@ Use an agent prompt like this in your n8n AI Agent node:
 
 > You are the command-center operator for Taskade. Interpret incoming requests, use Taskade MCP tools to update or create agents when needed, summarize what changed, and prepare a clean downstream handoff to the configured Claude endpoint whenever `sendTo` is set to `Claude`.
 
+> The bundled [`n8n-taskade-mcp-workflow.json`](./n8n-taskade-mcp-workflow.json) uses an OpenAI chat-model node as a sample. Swap that node for an Anthropic/Claude-compatible chat-model node in n8n if you want Claude to run the orchestration step too.
+
 ## Claude Handoff
 
 If you run Claude through your own proxy, automation layer, or webhook receiver, forward the post-agent payload to that downstream endpoint, for example:

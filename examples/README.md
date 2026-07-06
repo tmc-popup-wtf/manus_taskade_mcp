@@ -25,7 +25,7 @@ Use [`command-center-webhook.md`](./command-center-webhook.md) for a ready-to-ad
 1. In n8n, go to **Settings > Community Nodes > Install** and add `n8n-nodes-mcp`
 2. Import the workflow JSON via **Workflow > Import from File**
 3. Replace `YOUR_TASKADE_API_KEY` in the Taskade MCP node with your actual API key
-4. Configure your OpenAI (or other LLM) credentials
+4. Configure your OpenAI credentials, or swap the sample chat-model node for Anthropic/another supported n8n LLM node and then configure those credentials
 5. Activate the workflow
 
 ### What you can do
